@@ -20,7 +20,7 @@ public class MyView {
     }
 
     public void render(Map<String, Object> model, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        model.forEach((key, value) -> model.put(key, value));
+        model.forEach((key, value) -> req.setAttribute(key, value));
         RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
         dispatcher.forward(req,resp);
     }
