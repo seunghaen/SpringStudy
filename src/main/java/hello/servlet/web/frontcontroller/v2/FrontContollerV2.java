@@ -27,13 +27,12 @@ public class FrontContollerV2 extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String requestURI = req.getRequestURI();
         System.out.println("requestURI = " + requestURI);
-        ControllerV2 controllerV1 = controllerV1Map.get(requestURI);
-        System.out.println("controllerV1 = " + controllerV1);
-        if (controllerV1 == null) {
+        ControllerV2 controller = controllerV1Map.get(requestURI);
+        if (controller == null) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
-        MyView view = controllerV1.process(req, resp);
+        MyView view = controller.process(req, resp);
         view.render(req,resp);
     }
 }
