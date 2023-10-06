@@ -15,11 +15,11 @@ public class LogTestController {
     @GetMapping("/log-test")
     public String logTest(){
         String name = "spring";
-        logger.trace("trace = {}", name);
-        logger.debug("debug = {}", name);
-        logger.info("info = {}", name);
-        logger.warn("warn = {}", name);
-        logger.error("error = {}", name);
+        log.trace("trace = {}", name);
+        log.debug("debug = {}", name);
+        log.info("info = {}", name);
+        log.warn("warn = {}", name);
+        log.error("error = {}", name);
 
         return "ok";
     }
