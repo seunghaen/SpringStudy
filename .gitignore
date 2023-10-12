@@ -1,5 +1,5 @@
-HELP.md
-.gradle
+mvc1-basic/HELP.md
+../.gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
