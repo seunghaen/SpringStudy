@@ -13,9 +13,10 @@ public class ItemRepository {
     private static Map<Long, Item> store = new HashMap<>();
     private static Long itemId = 0L;
 
-    public void save(Item item){
+    public Item save(Item item){
         item.setId(++itemId);
         store.put(itemId, item);
+        return item;
     }
 
     public Item findById(Long itemId) {
